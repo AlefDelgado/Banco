@@ -36,11 +36,24 @@ public class Welcome extends JPanel
             new EmptyBorder(40, 50, 40, 50)));
         panel.setPreferredSize(new Dimension(450, 600));
         
+        ImageIcon icon = new ImageIcon(getClass().getResource("/ASSETS/Logo.png"));
+        Image img = icon.getImage().getScaledInstance(160, 160, Image.SCALE_SMOOTH);
+        ImageIcon iconResized = new ImageIcon(img);
+        JLabel logo = new JLabel(iconResized);
+        logo.setAlignmentX(Component.CENTER_ALIGNMENT);
+        panel.add(logo);
         
+        panel.add(Box.createRigidArea(new Dimension(0, 100)));
         
-        JButton loginBtn = GUI.createPrimaryButton("Iniciar Sesion");
+        JButton loginBtn = GUI.createPrimaryButton("Iniciar Sesión");
         loginBtn.setAlignmentX(Component.CENTER_ALIGNMENT);
         loginBtn.setMaximumSize(new Dimension(350, 45));
+        
+        loginBtn.addActionListener(e ->
+        {
+            
+        });
+        
         panel.add(loginBtn);
         
         panel.add(Box.createRigidArea(new Dimension(0, 20)));
